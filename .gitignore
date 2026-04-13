@@ -1,0 +1,48 @@
+# macOS
+.DS_Store
+
+# Xcode user data
+xcuserdata/
+*.xcuserdatad/
+*.xcuserstate
+
+# Xcode generated files
+DerivedData/
+build/
+Build/
+
+# Swift Package Manager
+.build/
+.swiftpm/
+Packages/
+
+# Xcode package integration
+SourcePackages/checkouts/
+SourcePackages/artifacts/
+
+# Playgrounds
+timeline.xctimeline
+playground.xcworkspace
+
+# Archives and exports
+*.ipa
+*.dSYM.zip
+*.dSYM
+*.xcarchive
+
+# Fastlane
+fastlane/report.xml
+fastlane/Preview.html
+fastlane/screenshots/
+fastlane/test_output/
+
+# Temporary files
+*.moved-aside
+*.swp
+*.tmp
+
+# Logs
+*.log
+
+
+.vscode/
