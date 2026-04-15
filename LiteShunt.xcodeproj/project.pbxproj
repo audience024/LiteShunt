@@ -1,0 +1,858 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		0A2102D45489C9574C6AF4FC /* LiteShuntExtension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 4352FE446D06C6DF91EB9582 /* LiteShuntExtension.appex */; };
+		28EC127D9E04BBAC385C5909 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B4418C3BB6AD634698530AC8 /* Cocoa.framework */; };
+		414BD22311F14100A390B6C3 /* StatusView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7740EB1A5BEB30875A05221 /* StatusView.swift */; };
+		510E6D6C458958F2DD0FEB9A /* LiteShuntApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88CBBF2AB96FA3E3C0969A8D /* LiteShuntApp.swift */; };
+		5300D6430550A81F25E3E11E /* NetworkExtension.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 63A472979C6F411FE178BB99 /* NetworkExtension.framework */; };
+		58D582664C75EE734F9A0F0E /* libLiteShuntSharedKit.a in Frameworks */ = {isa = PBXBuildFile; fileRef = E1045E6BAA04A7DE0B0CCD14 /* libLiteShuntSharedKit.a */; };
+		6D59C47C9A15530BB2CF097E /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B4418C3BB6AD634698530AC8 /* Cocoa.framework */; };
+		AA7B22B31B8B426FE212DE9E /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 86991F42525019D808D207F1 /* XCTest.framework */; };
+		B32043738203C81835336DA2 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B4418C3BB6AD634698530AC8 /* Cocoa.framework */; };
+		B6B43DA186AA6F5509AE999F /* TransparentProxyManagerStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4405533967C7D2255F6E278A /* TransparentProxyManagerStore.swift */; };
+		B8C61C5788B4122D52C5B254 /* libLiteShuntSharedKit.a in Frameworks */ = {isa = PBXBuildFile; fileRef = E1045E6BAA04A7DE0B0CCD14 /* libLiteShuntSharedKit.a */; };
+		B92450B8B737BDAAFD6E07D6 /* NetworkExtension.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 63A472979C6F411FE178BB99 /* NetworkExtension.framework */; };
+		C04EE54EEB7D2C05BE9E2CEB /* LiteShuntSharedConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDE443D82BBAF72DB8316DE0 /* LiteShuntSharedConstants.swift */; };
+		CD782093C53942AF6008FD05 /* LiteShuntPOCTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 533E14C3190A93AA43D6C1FF /* LiteShuntPOCTests.swift */; };
+		F38538D3BF693B419DB8D4A7 /* libLiteShuntSharedKit.a in Frameworks */ = {isa = PBXBuildFile; fileRef = E1045E6BAA04A7DE0B0CCD14 /* libLiteShuntSharedKit.a */; };
+		FA6166CF2BF4BB66A41504F1 /* LiteShuntTransparentProxyProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6EB81D9699816F839FF743A /* LiteShuntTransparentProxyProvider.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		53C244397F590DABD0229198 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 1F7A1D811BD94EB9EC73189B /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 73886C9595EC9B584155B6C3;
+			remoteInfo = LiteShuntSharedKit;
+		};
+		865BD2C77332041E76F4D1AB /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 1F7A1D811BD94EB9EC73189B /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = C656B5344D5591B3311238B0;
+			remoteInfo = LiteShuntExtension;
+		};
+		B2AB19B4D521FF4F128A4076 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 1F7A1D811BD94EB9EC73189B /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 73886C9595EC9B584155B6C3;
+			remoteInfo = LiteShuntSharedKit;
+		};
+		CBE9E44CF624C63DAEC00B78 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 1F7A1D811BD94EB9EC73189B /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 73886C9595EC9B584155B6C3;
+			remoteInfo = LiteShuntSharedKit;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		E1F4AB4CC72E4DD371982B35 /* Embed App Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				0A2102D45489C9574C6AF4FC /* LiteShuntExtension.appex in Embed App Extensions */,
+			);
+			name = "Embed App Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		0032A3B74B5E479E4AB009E0 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		0272D2DD0D172FDFDC8AA724 /* LiteShuntApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LiteShuntApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		4352FE446D06C6DF91EB9582 /* LiteShuntExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = LiteShuntExtension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		4405533967C7D2255F6E278A /* TransparentProxyManagerStore.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = TransparentProxyManagerStore.swift; sourceTree = "<group>"; };
+		533E14C3190A93AA43D6C1FF /* LiteShuntPOCTests.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = LiteShuntPOCTests.swift; sourceTree = "<group>"; };
+		5617715387582D4B7BB1B421 /* LiteShuntApp.entitlements */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.entitlements; path = LiteShuntApp.entitlements; sourceTree = "<group>"; };
+		63A472979C6F411FE178BB99 /* NetworkExtension.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = NetworkExtension.framework; path = Platforms/MacOSX.platform/Developer/SDKs/MacOSX15.0.sdk/System/Library/Frameworks/NetworkExtension.framework; sourceTree = DEVELOPER_DIR; };
+		6907D7FDBF8031B4B350EC8E /* LiteShuntPOCTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = LiteShuntPOCTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		7FEA0B5E87F14B2717DEA666 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		8214A1BB91EA4AA0C4FA3DF5 /* LiteShuntExtension.entitlements */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.entitlements; path = LiteShuntExtension.entitlements; sourceTree = "<group>"; };
+		86991F42525019D808D207F1 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Platforms/MacOSX.platform/Developer/SDKs/MacOSX15.0.sdk/System/Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
+		88CBBF2AB96FA3E3C0969A8D /* LiteShuntApp.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = LiteShuntApp.swift; sourceTree = "<group>"; };
+		B4418C3BB6AD634698530AC8 /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = Platforms/MacOSX.platform/Developer/SDKs/MacOSX15.0.sdk/System/Library/Frameworks/Cocoa.framework; sourceTree = DEVELOPER_DIR; };
+		D6EB81D9699816F839FF743A /* LiteShuntTransparentProxyProvider.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = LiteShuntTransparentProxyProvider.swift; sourceTree = "<group>"; };
+		DDE443D82BBAF72DB8316DE0 /* LiteShuntSharedConstants.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = LiteShuntSharedConstants.swift; sourceTree = "<group>"; };
+		E1045E6BAA04A7DE0B0CCD14 /* libLiteShuntSharedKit.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libLiteShuntSharedKit.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		E7740EB1A5BEB30875A05221 /* StatusView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = StatusView.swift; sourceTree = "<group>"; };
+		F73A98EB2583506657AC9DFE /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		7126C1BAE24312136AA0C3B6 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				28EC127D9E04BBAC385C5909 /* Cocoa.framework in Frameworks */,
+				B8C61C5788B4122D52C5B254 /* libLiteShuntSharedKit.a in Frameworks */,
+				5300D6430550A81F25E3E11E /* NetworkExtension.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		799244AB0C27036E8EDF971D /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B32043738203C81835336DA2 /* Cocoa.framework in Frameworks */,
+				58D582664C75EE734F9A0F0E /* libLiteShuntSharedKit.a in Frameworks */,
+				AA7B22B31B8B426FE212DE9E /* XCTest.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		8EC5FCC8223C1CFF6C380B99 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B7F671B96646B37C21F65918 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6D59C47C9A15530BB2CF097E /* Cocoa.framework in Frameworks */,
+				F38538D3BF693B419DB8D4A7 /* libLiteShuntSharedKit.a in Frameworks */,
+				B92450B8B737BDAAFD6E07D6 /* NetworkExtension.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		05A3D0A5BEC39BC6D84D11F7 /* LiteShuntExtension */ = {
+			isa = PBXGroup;
+			children = (
+				48D0A69EF49D825E23FA560E /* Provider */,
+				B006A6C31D6E93F01FCA4A4B /* Resources */,
+			);
+			name = LiteShuntExtension;
+			path = LiteShuntExtension;
+			sourceTree = "<group>";
+		};
+		10EB659EDD3F703A0A380ED6 = {
+			isa = PBXGroup;
+			children = (
+				A68EDA7AEB715A06F8C1CB26 /* Frameworks */,
+				2E472BADD6799A31A35818AC /* LiteShuntApp */,
+				05A3D0A5BEC39BC6D84D11F7 /* LiteShuntExtension */,
+				9F2F636EB9E60781D517A810 /* LiteShuntShared */,
+				AE93A4EC7BF4FF19BB1B3BB0 /* LiteShuntTests */,
+				91E7B2BD239D77D9CA58AE0A /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		176149DF60FD1F05451D2C62 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				0032A3B74B5E479E4AB009E0 /* Info.plist */,
+				5617715387582D4B7BB1B421 /* LiteShuntApp.entitlements */,
+			);
+			name = Resources;
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		1E3D162496C707BC8A6D1AC7 /* Features */ = {
+			isa = PBXGroup;
+			children = (
+				55F1F4D781DF6FF146035A0A /* Status */,
+			);
+			name = Features;
+			path = Features;
+			sourceTree = "<group>";
+		};
+		2E472BADD6799A31A35818AC /* LiteShuntApp */ = {
+			isa = PBXGroup;
+			children = (
+				AB0A218314F634FFDBE19F71 /* App */,
+				1E3D162496C707BC8A6D1AC7 /* Features */,
+				176149DF60FD1F05451D2C62 /* Resources */,
+				E5BD3B417114070670238947 /* Services */,
+			);
+			name = LiteShuntApp;
+			path = LiteShuntApp;
+			sourceTree = "<group>";
+		};
+		48D0A69EF49D825E23FA560E /* Provider */ = {
+			isa = PBXGroup;
+			children = (
+				D6EB81D9699816F839FF743A /* LiteShuntTransparentProxyProvider.swift */,
+			);
+			name = Provider;
+			path = Provider;
+			sourceTree = "<group>";
+		};
+		4B3391E10D437C2FD25B7506 /* POCTests */ = {
+			isa = PBXGroup;
+			children = (
+				533E14C3190A93AA43D6C1FF /* LiteShuntPOCTests.swift */,
+			);
+			name = POCTests;
+			path = POCTests;
+			sourceTree = "<group>";
+		};
+		55F1F4D781DF6FF146035A0A /* Status */ = {
+			isa = PBXGroup;
+			children = (
+				E7740EB1A5BEB30875A05221 /* StatusView.swift */,
+			);
+			name = Status;
+			path = Status;
+			sourceTree = "<group>";
+		};
+		584DCB76F2458416860BAFC9 /* OS X */ = {
+			isa = PBXGroup;
+			children = (
+				B4418C3BB6AD634698530AC8 /* Cocoa.framework */,
+				63A472979C6F411FE178BB99 /* NetworkExtension.framework */,
+				86991F42525019D808D207F1 /* XCTest.framework */,
+			);
+			name = "OS X";
+			sourceTree = "<group>";
+		};
+		91E7B2BD239D77D9CA58AE0A /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				E1045E6BAA04A7DE0B0CCD14 /* libLiteShuntSharedKit.a */,
+				0272D2DD0D172FDFDC8AA724 /* LiteShuntApp.app */,
+				4352FE446D06C6DF91EB9582 /* LiteShuntExtension.appex */,
+				6907D7FDBF8031B4B350EC8E /* LiteShuntPOCTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		9F2F636EB9E60781D517A810 /* LiteShuntShared */ = {
+			isa = PBXGroup;
+			children = (
+				A4C47B8CD25B3FF5208BBD66 /* Constants */,
+			);
+			name = LiteShuntShared;
+			path = LiteShuntShared;
+			sourceTree = "<group>";
+		};
+		A4C47B8CD25B3FF5208BBD66 /* Constants */ = {
+			isa = PBXGroup;
+			children = (
+				DDE443D82BBAF72DB8316DE0 /* LiteShuntSharedConstants.swift */,
+			);
+			name = Constants;
+			path = Constants;
+			sourceTree = "<group>";
+		};
+		A68EDA7AEB715A06F8C1CB26 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				584DCB76F2458416860BAFC9 /* OS X */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		A7DF2CA2CA153BA89533601E /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				7FEA0B5E87F14B2717DEA666 /* Info.plist */,
+			);
+			name = Resources;
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		AB0A218314F634FFDBE19F71 /* App */ = {
+			isa = PBXGroup;
+			children = (
+				88CBBF2AB96FA3E3C0969A8D /* LiteShuntApp.swift */,
+			);
+			name = App;
+			path = App;
+			sourceTree = "<group>";
+		};
+		AE93A4EC7BF4FF19BB1B3BB0 /* LiteShuntTests */ = {
+			isa = PBXGroup;
+			children = (
+				4B3391E10D437C2FD25B7506 /* POCTests */,
+				A7DF2CA2CA153BA89533601E /* Resources */,
+			);
+			name = LiteShuntTests;
+			path = LiteShuntTests;
+			sourceTree = "<group>";
+		};
+		B006A6C31D6E93F01FCA4A4B /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				F73A98EB2583506657AC9DFE /* Info.plist */,
+				8214A1BB91EA4AA0C4FA3DF5 /* LiteShuntExtension.entitlements */,
+			);
+			name = Resources;
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		E5BD3B417114070670238947 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				4405533967C7D2255F6E278A /* TransparentProxyManagerStore.swift */,
+			);
+			name = Services;
+			path = Services;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		C03BB3253A4B01FC965E601B /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
+/* Begin PBXNativeTarget section */
+		64D8701D937C5C08EAA35EEC /* LiteShuntPOCTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = FFCB6A9649F8454195850AD7 /* Build configuration list for PBXNativeTarget "LiteShuntPOCTests" */;
+			buildPhases = (
+				970AB36B417011FCD3201799 /* Sources */,
+				799244AB0C27036E8EDF971D /* Frameworks */,
+				FC8897822B546640201204CD /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				5A49325FF6D522D4E60D6E2A /* PBXTargetDependency */,
+			);
+			name = LiteShuntPOCTests;
+			productName = LiteShuntPOCTests;
+			productReference = 6907D7FDBF8031B4B350EC8E /* LiteShuntPOCTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		73886C9595EC9B584155B6C3 /* LiteShuntSharedKit */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 33B03FE0DEF950334633CFDA /* Build configuration list for PBXNativeTarget "LiteShuntSharedKit" */;
+			buildPhases = (
+				C03BB3253A4B01FC965E601B /* Headers */,
+				8CCA2CB0E34EE09741A33A4F /* Sources */,
+				8EC5FCC8223C1CFF6C380B99 /* Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = LiteShuntSharedKit;
+			productName = LiteShuntSharedKit;
+			productReference = E1045E6BAA04A7DE0B0CCD14 /* libLiteShuntSharedKit.a */;
+			productType = "com.apple.product-type.library.static";
+		};
+		9A004854B29037502AC01AF2 /* LiteShuntApp */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = FDC9EC8050F83D8990CBB98E /* Build configuration list for PBXNativeTarget "LiteShuntApp" */;
+			buildPhases = (
+				13383F59197BBC7C5003A1CE /* Sources */,
+				B7F671B96646B37C21F65918 /* Frameworks */,
+				A4F5D936998EE4D32709BAD8 /* Resources */,
+				E1F4AB4CC72E4DD371982B35 /* Embed App Extensions */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				E344A2C2B18527E4A9937744 /* PBXTargetDependency */,
+				F86B2481303CA590E0EC1C7C /* PBXTargetDependency */,
+			);
+			name = LiteShuntApp;
+			productName = LiteShuntApp;
+			productReference = 0272D2DD0D172FDFDC8AA724 /* LiteShuntApp.app */;
+			productType = "com.apple.product-type.application";
+		};
+		C656B5344D5591B3311238B0 /* LiteShuntExtension */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 9CAE6EB17F4BA6BA38396D42 /* Build configuration list for PBXNativeTarget "LiteShuntExtension" */;
+			buildPhases = (
+				72004162E28A392664D8F69D /* Sources */,
+				7126C1BAE24312136AA0C3B6 /* Frameworks */,
+				86D0C3C49703C7AC14559670 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				A4CAEAB7547DB6986BD9A5A5 /* PBXTargetDependency */,
+			);
+			name = LiteShuntExtension;
+			productName = LiteShuntExtension;
+			productReference = 4352FE446D06C6DF91EB9582 /* LiteShuntExtension.appex */;
+			productType = "com.apple.product-type.app-extension";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		1F7A1D811BD94EB9EC73189B /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1600;
+				LastUpgradeCheck = 1600;
+			};
+			buildConfigurationList = C78BB704BD561430147B3EC9 /* Build configuration list for PBXProject "LiteShunt" */;
+			compatibilityVersion = "Xcode 16.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 10EB659EDD3F703A0A380ED6;
+			minimizedProjectReferenceProxies = 0;
+			preferredProjectObjectVersion = 77;
+			productRefGroup = 91E7B2BD239D77D9CA58AE0A /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				9A004854B29037502AC01AF2 /* LiteShuntApp */,
+				C656B5344D5591B3311238B0 /* LiteShuntExtension */,
+				64D8701D937C5C08EAA35EEC /* LiteShuntPOCTests */,
+				73886C9595EC9B584155B6C3 /* LiteShuntSharedKit */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		86D0C3C49703C7AC14559670 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A4F5D936998EE4D32709BAD8 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FC8897822B546640201204CD /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		13383F59197BBC7C5003A1CE /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				510E6D6C458958F2DD0FEB9A /* LiteShuntApp.swift in Sources */,
+				414BD22311F14100A390B6C3 /* StatusView.swift in Sources */,
+				B6B43DA186AA6F5509AE999F /* TransparentProxyManagerStore.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		72004162E28A392664D8F69D /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FA6166CF2BF4BB66A41504F1 /* LiteShuntTransparentProxyProvider.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		8CCA2CB0E34EE09741A33A4F /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C04EE54EEB7D2C05BE9E2CEB /* LiteShuntSharedConstants.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		970AB36B417011FCD3201799 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CD782093C53942AF6008FD05 /* LiteShuntPOCTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		5A49325FF6D522D4E60D6E2A /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = LiteShuntSharedKit;
+			target = 73886C9595EC9B584155B6C3 /* LiteShuntSharedKit */;
+			targetProxy = 53C244397F590DABD0229198 /* PBXContainerItemProxy */;
+		};
+		A4CAEAB7547DB6986BD9A5A5 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = LiteShuntSharedKit;
+			target = 73886C9595EC9B584155B6C3 /* LiteShuntSharedKit */;
+			targetProxy = CBE9E44CF624C63DAEC00B78 /* PBXContainerItemProxy */;
+		};
+		E344A2C2B18527E4A9937744 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = LiteShuntExtension;
+			target = C656B5344D5591B3311238B0 /* LiteShuntExtension */;
+			targetProxy = 865BD2C77332041E76F4D1AB /* PBXContainerItemProxy */;
+		};
+		F86B2481303CA590E0EC1C7C /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = LiteShuntSharedKit;
+			target = 73886C9595EC9B584155B6C3 /* LiteShuntSharedKit */;
+			targetProxy = B2AB19B4D521FF4F128A4076 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		0927A48A63F93DEC7CC8C164 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				EXECUTABLE_PREFIX = lib;
+				MACH_O_TYPE = staticlib;
+				MACOSX_DEPLOYMENT_TARGET = 14.0;
+				MARKETING_VERSION = 0.1.0;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 6.0;
+			};
+			name = Release;
+		};
+		1D70EEC8C3013BD559FD706B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				APPLICATION_EXTENSION_API_ONLY = YES;
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_ENTITLEMENTS = LiteShuntExtension/Resources/LiteShuntExtension.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				ENABLE_APP_SANDBOX = YES;
+				GENERATE_INFOPLIST_FILE = NO;
+				INFOPLIST_FILE = LiteShuntExtension/Resources/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @executable_path/../../Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 14.0;
+				MARKETING_VERSION = 0.1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.zero.LiteShunt.extension;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 6.0;
+			};
+			name = Debug;
+		};
+		214A41909E6FCF6D115B3C2B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "";
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGNING_ALLOWED = NO;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = NO;
+				INFOPLIST_FILE = LiteShuntTests/Resources/Info.plist;
+				MACOSX_DEPLOYMENT_TARGET = 14.0;
+				MARKETING_VERSION = 0.1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.zero.LiteShunt.tests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 6.0;
+				TEST_HOST = "";
+			};
+			name = Release;
+		};
+		32D03486C96CD009AD0A04E5 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_ENTITLEMENTS = LiteShuntApp/Resources/LiteShuntApp.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				CURRENT_PROJECT_VERSION = 1;
+				ENABLE_APP_SANDBOX = YES;
+				GENERATE_INFOPLIST_FILE = NO;
+				INFOPLIST_FILE = LiteShuntApp/Resources/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @executable_path/../PlugIns";
+				MACOSX_DEPLOYMENT_TARGET = 14.0;
+				MARKETING_VERSION = 0.1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.zero.LiteShunt;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 6.0;
+			};
+			name = Release;
+		};
+		411750A9165A5B231DC39298 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 14.0;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 6.0;
+			};
+			name = Debug;
+		};
+		61FF3B52A20C5AF2215CA4F8 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 14.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				SWIFT_VERSION = 6.0;
+			};
+			name = Release;
+		};
+		B865CE7B411CBA6FCA6D7CFB /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				EXECUTABLE_PREFIX = lib;
+				MACH_O_TYPE = staticlib;
+				MACOSX_DEPLOYMENT_TARGET = 14.0;
+				MARKETING_VERSION = 0.1.0;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 6.0;
+			};
+			name = Debug;
+		};
+		DD5F8F1C31A979E71A345F25 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_ENTITLEMENTS = LiteShuntApp/Resources/LiteShuntApp.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				CURRENT_PROJECT_VERSION = 1;
+				ENABLE_APP_SANDBOX = YES;
+				GENERATE_INFOPLIST_FILE = NO;
+				INFOPLIST_FILE = LiteShuntApp/Resources/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @executable_path/../PlugIns";
+				MACOSX_DEPLOYMENT_TARGET = 14.0;
+				MARKETING_VERSION = 0.1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.zero.LiteShunt;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 6.0;
+			};
+			name = Debug;
+		};
+		EB74A2A95592172603B1498F /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				APPLICATION_EXTENSION_API_ONLY = YES;
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_ENTITLEMENTS = LiteShuntExtension/Resources/LiteShuntExtension.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				ENABLE_APP_SANDBOX = YES;
+				GENERATE_INFOPLIST_FILE = NO;
+				INFOPLIST_FILE = LiteShuntExtension/Resources/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @executable_path/../../Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 14.0;
+				MARKETING_VERSION = 0.1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.zero.LiteShunt.extension;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 6.0;
+			};
+			name = Release;
+		};
+		F39D812EE2D65C60EA0DDFFD /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "";
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGNING_ALLOWED = NO;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = NO;
+				INFOPLIST_FILE = LiteShuntTests/Resources/Info.plist;
+				MACOSX_DEPLOYMENT_TARGET = 14.0;
+				MARKETING_VERSION = 0.1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.zero.LiteShunt.tests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 6.0;
+				TEST_HOST = "";
+			};
+			name = Debug;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		33B03FE0DEF950334633CFDA /* Build configuration list for PBXNativeTarget "LiteShuntSharedKit" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B865CE7B411CBA6FCA6D7CFB /* Debug */,
+				0927A48A63F93DEC7CC8C164 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		9CAE6EB17F4BA6BA38396D42 /* Build configuration list for PBXNativeTarget "LiteShuntExtension" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1D70EEC8C3013BD559FD706B /* Debug */,
+				EB74A2A95592172603B1498F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		C78BB704BD561430147B3EC9 /* Build configuration list for PBXProject "LiteShunt" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				411750A9165A5B231DC39298 /* Debug */,
+				61FF3B52A20C5AF2215CA4F8 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		FDC9EC8050F83D8990CBB98E /* Build configuration list for PBXNativeTarget "LiteShuntApp" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				DD5F8F1C31A979E71A345F25 /* Debug */,
+				32D03486C96CD009AD0A04E5 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		FFCB6A9649F8454195850AD7 /* Build configuration list for PBXNativeTarget "LiteShuntPOCTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F39D812EE2D65C60EA0DDFFD /* Debug */,
+				214A41909E6FCF6D115B3C2B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 1F7A1D811BD94EB9EC73189B /* Project object */;
+}

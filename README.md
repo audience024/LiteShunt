@@ -90,4 +90,20 @@ flowchart LR
 - 强化日志、错误处理与状态恢复能力
 
 ## 当前状态
-当前处于**项目初始化阶段**，已完成基础方案梳理与文档框架建立，尚未创建正式的 Xcode 工程与实现代码。
+当前已完成**核心 Swift Package 骨架**与 **`POC-001` 最小 Xcode 工程骨架**，已进入正式的 `NetworkExtension` POC 阶段。
+
+已完成：
+- 文档体系、范围边界与总体架构设计
+- `LiteShuntShared` 共享模型与默认常量
+- `LiteShuntCore` 中的 `FlowClassifier` 基础规则决策逻辑
+- `swift build`、`swift test` 与 `swift run LiteShuntSmokeTests` 基础验证链路
+- `LiteShunt.xcodeproj`、宿主应用、透明代理扩展、共享模块与测试 Target 的最小工程骨架
+- `NETransparentProxyProvider` 的生命周期入口与工程级构建验证链路
+
+尚未完成：
+- 真实透明代理配置保存与扩展启停联调
+- 来源应用识别与首个 TCP Flow 捕获验证
+- `SOCKS5` 转发、回环规避与失败策略的系统级验证
+- 完整菜单栏 UI、规则管理与热加载链路
+
+当前最优先的下一步是：**进入 `POC-002`，在真实扩展配置下验证来源应用识别与首个 TCP Flow 捕获。**
