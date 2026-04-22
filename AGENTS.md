@@ -215,3 +215,8 @@ swiftlint
 - 若发现设计与实现存在冲突，优先修正文档或暂停实现，不要自行拍脑袋扩展范围。
 - 在合适的时机执行编译验证，确保工程改动具备基本可构建性。
 - 所有输出默认使用简体中文，包括代码注释、任务记录和实现说明。
+
+<!-- SPECKIT START -->
+For additional context about technologies to be used, project structure,
+shell commands, and other important information, read the current plan
+<!-- SPECKIT END -->
