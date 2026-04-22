@@ -1,46 +1,38 @@
-# 本轮任务清单
+# 任务总目录
 
-## 1. 任务总览
+## 1. 状态定义
 
-| 编号 | 任务 | 负责人线程 | 状态 | 备注 |
-| --- | --- | --- | --- | --- |
-| S1 | 补全本轮规格与完成标准 | `01-规划-Planner` | DONE | 已更新 `SPEC.md`，收敛到 `POC-001` |
-| S2 | 明确目录写入边界与所有权 | `00-主控` | DONE | 已更新 `OWNERSHIP.md`，写入边界已锁定 |
-| S3 | 按规格完成实现 | `02-实现-Generator` | DONE | 已完成实现并更新 `HANDOFF.md` |
-| S4 | 执行构建、测试与行为验收 | `03-验收-Evaluator` | DONE | 已完成验收并更新 `QA_REPORT.md` |
-| S5 | 决定是否进入下一轮 | `00-主控` | DONE | 决定进入下一轮 `POC-002` |
+- `TODO`：任务已定义，但尚未开始执行。
+- `IN_PROGRESS`：任务已有明确执行现场，允许继续推进。
+- `BLOCKED`：任务存在外部阻塞，当前无法安全推进。
+- `DONE`：任务已完成并满足当前阶段验收标准。
 
-## 2. 状态定义
+## 2. 当前主任务
 
-- `TODO`：尚未开始
-- `IN_PROGRESS`：进行中
-- `BLOCKED`：有阻塞
-- `DONE`：已完成
+- 当前唯一主任务：`POC-002`
+- 当前任务文件：[docs/ai/tasks/POC-002.md](/Users/zero/Downloads/code/LiteShunt/docs/ai/tasks/POC-002.md)
+- 下一候选任务：`POC-003`
+- 协同中的支撑任务：`CFG-001`
 
-## 3. 当前建议任务池
+## 3. 任务大纲
 
-以下任务可作为 LiteShunt 当前阶段的优先候选：
+| 编号 | 任务标题 | 状态 | 优先级 | 依赖 | 任务文件 |
+| --- | --- | --- | --- | --- | --- |
+| `POC-002` | 验证按应用识别 TCP Flow | `TODO` | 高 | `POC-001` | [docs/ai/tasks/POC-002.md](/Users/zero/Downloads/code/LiteShunt/docs/ai/tasks/POC-002.md) |
+| `CFG-001` | 实现共享配置快照模型 | `IN_PROGRESS` | 高 | `M2` | [docs/ai/tasks/CFG-001.md](/Users/zero/Downloads/code/LiteShunt/docs/ai/tasks/CFG-001.md) |
+| `POC-003` | 验证 SOCKS5 转发链路 | `TODO` | 中 | `POC-002`、`CFG-001` | [docs/ai/tasks/POC-003.md](/Users/zero/Downloads/code/LiteShunt/docs/ai/tasks/POC-003.md) |
 
-| 候选编号 | 候选任务 | 推荐优先级 | 备注 |
-| --- | --- | --- | --- |
-| POC-A | 验证透明代理扩展基本可用性 | 高 | 本轮唯一主目标，对齐 `POC-001` |
-| POC-B | 验证按应用识别 TCP Flow | 中 | 下一轮候选，对齐 `POC-002` |
-| POC-C | 验证 SOCKS5 转发链路 | 中 | 下一轮候选，对齐 `POC-003` |
-| POC-D | 验证回环规避策略 | 中 | 下一轮候选，对齐 `POC-004` |
-| POC-E | 验证 `FAIL_CLOSED` 策略 | 中 | 下一轮候选，对齐 `POC-005` |
+## 4. 任务依赖说明
 
-## 4. 本轮实施拆解
+- `POC-002` 依赖 `POC-001` 已完成的工程骨架与扩展入口。
+- `CFG-001` 为 `POC-002` 和 `POC-003` 提供配置快照与共享读写基础。
+- `POC-003` 依赖 `POC-002` 先确认真实 Flow 已进入扩展，避免先做无落点的转发链路。
+- `POC-004`、`POC-005` 暂不单独建档，待 `POC-003` 接近完成后再细化为独立任务文件。
 
-| 子任务 | 说明 | 负责人线程 | 状态 |
-| --- | --- | --- | --- |
-| POC-001-A | 创建 `LiteShunt.xcodeproj` 与最小 Target 拓扑 | `02-实现-Generator` | DONE |
-| POC-001-B | 建立宿主、扩展、共享、测试目录与基础源码入口 | `02-实现-Generator` | DONE |
-| POC-001-C | 提供工程级构建验证命令或脚本 | `02-实现-Generator` | DONE |
-| POC-001-D | 记录实际验证结果与阻塞点到 `HANDOFF.md` | `02-实现-Generator` | DONE |
-| POC-001-E | 独立执行构建、测试与结构验收 | `03-验收-Evaluator` | DONE |
+## 5. 当前维护约定
 
-## 5. 维护规则
-
-- `Planner` 负责把候选任务收敛为“本轮唯一主目标”。
-- `Generator` 不得私自扩写任务范围。
-- `Evaluator` 发现范围漂移时，应直接在 `QA_REPORT.md` 中指出。
+- `TASK_LIST.md` 只做导航，不长期记录详细执行步骤。
+- 每个核心任务的静态约束与动态现场统一写入 `docs/ai/tasks/*.md`。
+- 当前主任务发生变化时，必须同时更新本文件、对应任务文件，以及必要的 `docs/ai/SPEC.md`。
+- `docs/ai/SPEC.md` 负责描述“本轮 contract”，任务文件负责保存“可恢复的执行现场”。
+- 若本轮只启用单线程推进，也仍然优先维护任务文件，而不是把细节写回聊天记录。
