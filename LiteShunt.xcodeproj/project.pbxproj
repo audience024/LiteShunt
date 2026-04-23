@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 46;
+	objectVersion = 71;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -138,7 +138,6 @@
 				48D0A69EF49D825E23FA560E /* Provider */,
 				B006A6C31D6E93F01FCA4A4B /* Resources */,
 			);
-			name = LiteShuntExtension;
 			path = LiteShuntExtension;
 			sourceTree = "<group>";
 		};
@@ -160,7 +159,6 @@
 				0032A3B74B5E479E4AB009E0 /* Info.plist */,
 				5617715387582D4B7BB1B421 /* LiteShuntApp.entitlements */,
 			);
-			name = Resources;
 			path = Resources;
 			sourceTree = "<group>";
 		};
@@ -169,7 +167,6 @@
 			children = (
 				55F1F4D781DF6FF146035A0A /* Status */,
 			);
-			name = Features;
 			path = Features;
 			sourceTree = "<group>";
 		};
@@ -181,7 +178,6 @@
 				176149DF60FD1F05451D2C62 /* Resources */,
 				E5BD3B417114070670238947 /* Services */,
 			);
-			name = LiteShuntApp;
 			path = LiteShuntApp;
 			sourceTree = "<group>";
 		};
@@ -190,7 +186,6 @@
 			children = (
 				D6EB81D9699816F839FF743A /* LiteShuntTransparentProxyProvider.swift */,
 			);
-			name = Provider;
 			path = Provider;
 			sourceTree = "<group>";
 		};
@@ -199,7 +194,6 @@
 			children = (
 				533E14C3190A93AA43D6C1FF /* LiteShuntPOCTests.swift */,
 			);
-			name = POCTests;
 			path = POCTests;
 			sourceTree = "<group>";
 		};
@@ -208,7 +202,6 @@
 			children = (
 				E7740EB1A5BEB30875A05221 /* StatusView.swift */,
 			);
-			name = Status;
 			path = Status;
 			sourceTree = "<group>";
 		};
@@ -238,7 +231,6 @@
 			children = (
 				A4C47B8CD25B3FF5208BBD66 /* Constants */,
 			);
-			name = LiteShuntShared;
 			path = LiteShuntShared;
 			sourceTree = "<group>";
 		};
@@ -247,7 +239,6 @@
 			children = (
 				DDE443D82BBAF72DB8316DE0 /* LiteShuntSharedConstants.swift */,
 			);
-			name = Constants;
 			path = Constants;
 			sourceTree = "<group>";
 		};
@@ -264,7 +255,6 @@
 			children = (
 				7FEA0B5E87F14B2717DEA666 /* Info.plist */,
 			);
-			name = Resources;
 			path = Resources;
 			sourceTree = "<group>";
 		};
@@ -273,7 +263,6 @@
 			children = (
 				88CBBF2AB96FA3E3C0969A8D /* LiteShuntApp.swift */,
 			);
-			name = App;
 			path = App;
 			sourceTree = "<group>";
 		};
@@ -283,7 +272,6 @@
 				4B3391E10D437C2FD25B7506 /* POCTests */,
 				A7DF2CA2CA153BA89533601E /* Resources */,
 			);
-			name = LiteShuntTests;
 			path = LiteShuntTests;
 			sourceTree = "<group>";
 		};
@@ -293,7 +281,6 @@
 				F73A98EB2583506657AC9DFE /* Info.plist */,
 				8214A1BB91EA4AA0C4FA3DF5 /* LiteShuntExtension.entitlements */,
 			);
-			name = Resources;
 			path = Resources;
 			sourceTree = "<group>";
 		};
@@ -302,7 +289,6 @@
 			children = (
 				4405533967C7D2255F6E278A /* TransparentProxyManagerStore.swift */,
 			);
-			name = Services;
 			path = Services;
 			sourceTree = "<group>";
 		};
@@ -410,8 +396,6 @@
 				Base,
 			);
 			mainGroup = 10EB659EDD3F703A0A380ED6;
-			minimizedProjectReferenceProxies = 0;
-			preferredProjectObjectVersion = 77;
 			productRefGroup = 91E7B2BD239D77D9CA58AE0A /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -543,7 +527,11 @@
 				ENABLE_APP_SANDBOX = YES;
 				GENERATE_INFOPLIST_FILE = NO;
 				INFOPLIST_FILE = LiteShuntExtension/Resources/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @executable_path/../../Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@executable_path/../../Frameworks",
+				);
 				MACOSX_DEPLOYMENT_TARGET = 14.0;
 				MARKETING_VERSION = 0.1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.zero.LiteShunt.extension;
@@ -583,13 +571,19 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_ENTITLEMENTS = LiteShuntApp/Resources/LiteShuntApp.entitlements;
+				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = "";
 				ENABLE_APP_SANDBOX = YES;
 				GENERATE_INFOPLIST_FILE = NO;
 				INFOPLIST_FILE = LiteShuntApp/Resources/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @executable_path/../PlugIns";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@executable_path/../PlugIns",
+				);
 				MACOSX_DEPLOYMENT_TARGET = 14.0;
 				MARKETING_VERSION = 0.1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.zero.LiteShunt;
@@ -743,13 +737,19 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_ENTITLEMENTS = LiteShuntApp/Resources/LiteShuntApp.entitlements;
+				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = "";
 				ENABLE_APP_SANDBOX = YES;
 				GENERATE_INFOPLIST_FILE = NO;
 				INFOPLIST_FILE = LiteShuntApp/Resources/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @executable_path/../PlugIns";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@executable_path/../PlugIns",
+				);
 				MACOSX_DEPLOYMENT_TARGET = 14.0;
 				MARKETING_VERSION = 0.1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.zero.LiteShunt;
@@ -771,7 +771,11 @@
 				ENABLE_APP_SANDBOX = YES;
 				GENERATE_INFOPLIST_FILE = NO;
 				INFOPLIST_FILE = LiteShuntExtension/Resources/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @executable_path/../../Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@executable_path/../../Frameworks",
+				);
 				MACOSX_DEPLOYMENT_TARGET = 14.0;
 				MARKETING_VERSION = 0.1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.zero.LiteShunt.extension;

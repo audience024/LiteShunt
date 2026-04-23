@@ -2,71 +2,85 @@
 
 ## 1. 本轮目标
 
-`POC-001：搭建最小 Xcode 工程，验证 LiteShunt Transparent Proxy Extension 可成功构建、可被宿主配置并具备接收首个 TCP Flow 的代码入口。`
+`POC-002：打通宿主最小透明代理配置保存链路，在扩展侧安装最小透明代理规则，并补齐来源应用身份与 Flow 诊断日志，为真实 TCP Flow 捕获验证做准备。`
 
 ## 2. 已完成内容
 
-- 已新增正式 `LiteShunt.xcodeproj`，包含 `LiteShuntApp`、`LiteShuntExtension`、`LiteShuntSharedKit`、`LiteShuntPOCTests` 四个 Target。
-- 已新增共享 Scheme：`LiteShuntApp`。
-- 已建立宿主应用最小 SwiftUI 入口、透明代理扩展最小 `NETransparentProxyProvider` 子类，以及共享常量与 POC 测试骨架。
-- 已新增 `script/generate_xcodeproj.rb` 用于通过本机 `xcodeproj` gem 生成工程。
-- 已新增 `script/build_and_run.sh`，可执行工程级构建、启动与验证。
-- 已新增 `.codex/environments/environment.toml`，为 Codex App 提供 `Run` 动作入口。
+- 已在宿主侧落地 `NETransparentProxyManager` 的最小保存闭环：
+  - 读取全部 manager
+  - 复用或新建 manager
+  - 组装 `NETunnelProviderProtocol`
+  - 调用 `saveToPreferences`
+  - 保存后回读并生成摘要
+- 已在状态页增加“写入 POC 配置”按钮和配置摘要显示，便于手工联调。
+- 已在扩展 `startProxy` 中读取 `providerConfiguration`、安装最小 `NETransparentProxyNetworkSettings`，并输出启动日志。
+- 已在扩展 `handleNewFlow(_:)` 中增加来源应用身份、audit token 长度、hostname 与 endpoint 诊断日志；当前保持 `return false`，继续采用“只采样、不接管”的 POC 策略。
+- 已补充透明代理 POC 所需共享常量，收敛 `providerConfiguration` 键和默认描述。
+- 已结合多智能体只读调查与 `.specify/memory/constitution.md` 做门禁复核，确认本轮仍严格停留在 `POC-002` 范围内。
 
 ## 3. 修改文件
 
-请逐项列出本轮修改的文件与原因：
-
-- `LiteShunt.xcodeproj/project.pbxproj`：正式 Xcode 工程文件。
-- `LiteShunt.xcodeproj/xcshareddata/xcschemes/LiteShuntApp.xcscheme`：共享 Scheme，供 `xcodebuild` 与 Run 动作使用。
-- `LiteShuntApp/App/LiteShuntApp.swift`：宿主应用入口。
-- `LiteShuntApp/Features/Status/StatusView.swift`：最小 POC 状态页。
-- `LiteShuntApp/Services/TransparentProxyManagerStore.swift`：宿主侧最小透明代理配置读取逻辑。
-- `LiteShuntApp/Resources/Info.plist`：宿主应用 Info 配置。
-- `LiteShuntApp/Resources/LiteShuntApp.entitlements`：宿主应用 App Group / NetworkExtension entitlement 占位。
-- `LiteShuntExtension/Provider/LiteShuntTransparentProxyProvider.swift`：透明代理扩展生命周期与新 Flow 入口。
-- `LiteShuntExtension/Resources/Info.plist`：扩展 Info 配置。
-- `LiteShuntExtension/Resources/LiteShuntExtension.entitlements`：扩展 App Group / NetworkExtension entitlement 占位。
-- `LiteShuntShared/Constants/LiteShuntSharedConstants.swift`：POC 共享常量。
-- `LiteShuntTests/POCTests/LiteShuntPOCTests.swift`：Xcode 测试 Target 的最小测试样例。
-- `LiteShuntTests/Resources/Info.plist`：测试 Bundle 配置。
-- `script/generate_xcodeproj.rb`：工程生成脚本。
-- `script/build_and_run.sh`：统一构建 / 运行 / 验证脚本。
-- `.codex/environments/environment.toml`：Codex Run 动作配置。
+- `LiteShuntShared/Constants/LiteShuntSharedConstants.swift`
+  - 新增透明代理 POC 相关常量与 `providerConfiguration` 键。
+- `LiteShuntApp/Services/TransparentProxyManagerStore.swift`
+  - 从“只读 manager 数量”扩展为“加载 / 创建 / 保存 / 回读 manager”的最小闭环。
+- `LiteShuntApp/Features/Status/StatusView.swift`
+  - 新增“写入 POC 配置”入口和配置摘要展示。
+- `LiteShuntExtension/Provider/LiteShuntTransparentProxyProvider.swift`
+  - 新增 `providerConfiguration` 启动日志、最小透明代理规则安装、Flow 身份诊断日志。
+- `docs/ai/TASK_LIST.md`
+  - 将 `POC-002` 状态更新为 `BLOCKED`。
+- `docs/ai/tasks/POC-002.md`
+  - 回写本轮执行现场、阻塞与下一步建议。
+- `docs/ai/HANDOFF.md`
+  - 更新为本轮实现交接。
 
 ## 4. 执行过的验证
 
-请写实际执行过的命令和结果，不要写“理论可行”：
-
-- `swift build`：通过。
-- `swift test`：通过，8 个测试全部通过。
-- `swift run LiteShuntSmokeTests`：通过，输出 `LiteShunt 核心自校验通过`。
-- `ruby script/generate_xcodeproj.rb`：通过，成功生成 `LiteShunt.xcodeproj`。
-- `xcodebuild -list -project LiteShunt.xcodeproj`：通过，成功识别 4 个 Target 和 `LiteShuntApp` Scheme。
-- `./script/build_and_run.sh --build-only`：通过，`LiteShuntApp.app` 与 `LiteShuntExtension.appex` 成功构建。
-- `./script/build_and_run.sh --verify`：通过，脚本返回 0，说明构建后应用可被启动并通过进程存在性校验。
+- `swift test`
+  - 通过，8 个测试全部通过。
+- `swift run LiteShuntSmokeTests`
+  - 通过，输出 `LiteShunt 核心自校验通过`。
+- `xcodebuild -project LiteShunt.xcodeproj -scheme LiteShuntApp -configuration Debug build CODE_SIGNING_ALLOWED=NO`
+  - 通过，宿主应用与扩展均可完成工程级构建。
 
 ## 5. 已知问题
 
-- 当前尚未验证真实的透明代理规则安装与首个 TCP Flow 的系统级捕获，只完成了扩展生命周期入口与工程级构建验证。
-- 当前 entitlement 中使用的 `app-proxy-provider` 是依据本机 SDK 模板与 `NETransparentProxyManager` / `NETransparentProxyProvider` 关系做的 POC 级推断；进入真实配置与签名联调前，需要再做一次人工确认。
-- 目前构建命令使用 `CODE_SIGNING_ALLOWED=NO`，因此尚未覆盖开发者签名、Team ID、系统授权弹窗与偏好设置保存链路。
+- 尚未进行带签名、带系统授权的真实保存验证；当前构建仍使用 `CODE_SIGNING_ALLOWED=NO`。
+- `Personal Team` 已确认不支持 `Network Extensions`，无法生成 LiteShunt 所需的开发 profile。
+- 已发现组织团队，但当前账号仅为 `Developer`，且 `Certificates, Identifiers & Profiles` 显示不可用；当前无法判断是权限不足、团队协议未确认，还是 `Network Extensions` capability 尚未开通。
+- 在上述外部条件未解决前，`POC-002` 不建议继续做真实系统联调，避免把签名 / capability 问题误判为代码问题。
+- 尚未确认是否需要额外 `AuthorizationRef` / `setAuthorization(_:)` 才能稳定写入系统配置。
+- 尚未在真实目标应用上看到首个 TCP Flow 进入扩展，因此 `POC-002` 仍不能宣告完成。
+- 扩展构建存在 Swift 6 并发 warning：
+  - `setTunnelNetworkSettings` 回调中对 `self` 和 `completionHandler` 的 capture 仍会提示 non-Sendable warning
+  - `NETransparentProxyManager` 的 retroactive `Sendable` 声明存在 warning
+  - 当前 warning 不阻断构建，但后续可以继续做并发收口
+- 当前 entitlement 中的 `app-proxy-provider` 仍需带签名实机确认，不能仅凭无签名构建视为最终正确。
 
 ## 6. 风险说明
 
 - 是否涉及权限、签名、回环规避、失败策略：
-  - 涉及。当前只完成无签名构建，未进入真实权限、签名、回环规避与 `FAIL_CLOSED` 行为联调。
+  - 涉及。当前只完成无签名构建和最小规则安装，未进入真实权限、签名、回环规避与 `FAIL_CLOSED` 行为联调。
 - 是否存在未覆盖的异常分支：
-  - 存在。尚未覆盖扩展启动失败、配置保存失败、透明代理网络规则安装失败、真实 Flow 识别失败等分支。
+  - 存在。尚未覆盖配置保存失败、系统授权失败、扩展未被拉起、规则安装失败、Flow 未进入扩展等分支。
 
 ## 7. 建议下一步
 
-- 建议先交给 `Evaluator` 独立检查以下事项：
-  - `LiteShunt.xcodeproj` 与 Scheme 是否可稳定识别。
-  - `swift build` / `swift test` / `swift run LiteShuntSmokeTests` 是否未被破坏。
-  - `./script/build_and_run.sh --build-only` 是否稳定产出 `.app` 与 `.appex`。
-  - 扩展中是否确实存在 `startProxy`、`stopProxy`、`handleNewFlow` 的最小入口。
-- 若验收通过，下一轮建议进入 `POC-002`：在真实扩展配置下验证来源应用识别与首个 TCP Flow 捕获。
+- 先由团队管理员或账号持有人补齐以下外部条件：
+  - 可用的付费开发团队
+  - 当前账号的 `Certificates, Identifiers & Profiles` 访问权限
+  - 团队最新协议确认
+  - App ID / Team 的 `Network Extensions` capability
+- 外部条件满足后，再用带签名配置运行宿主应用，点击“写入 POC 配置”，记录 `saveToPreferences` 的真实结果和错误信息。
+- 如保存成功，继续验证扩展是否被系统拉起，以及 `startProxy` 是否成功安装最小透明代理规则。
+- 选择一个目标应用做真实 TCP Flow 捕获，重点观察扩展日志里的：
+  - `sourceAppSigningIdentifier`
+  - `uniqueIdPrefix`
+  - `remoteHost`
+  - `remoteEndpoint`
+- 若系统在保存阶段报权限错误，优先评估是否需要补 `setAuthorization(_:)`，不要绕开系统能力边界。
+- 若真实 Flow 已进入扩展，再进入 `POC-003` 所需的 `SocksConnector` 设计与实现。
 
 ## 8. 填写要求
 

@@ -9,7 +9,7 @@
 
 ## 2. 当前主任务
 
-- 当前唯一主任务：`POC-002`
+- 当前唯一主任务：`POC-002`（`BLOCKED`）
 - 当前任务文件：[docs/ai/tasks/POC-002.md](/Users/zero/Downloads/code/LiteShunt/docs/ai/tasks/POC-002.md)
 - 下一候选任务：`POC-003`
 - 协同中的支撑任务：`CFG-001`
@@ -18,7 +18,7 @@
 
 | 编号 | 任务标题 | 状态 | 优先级 | 依赖 | 任务文件 |
 | --- | --- | --- | --- | --- | --- |
-| `POC-002` | 验证按应用识别 TCP Flow | `TODO` | 高 | `POC-001` | [docs/ai/tasks/POC-002.md](/Users/zero/Downloads/code/LiteShunt/docs/ai/tasks/POC-002.md) |
+| `POC-002` | 验证按应用识别 TCP Flow | `BLOCKED` | 高 | `POC-001` | [docs/ai/tasks/POC-002.md](/Users/zero/Downloads/code/LiteShunt/docs/ai/tasks/POC-002.md) |
 | `CFG-001` | 实现共享配置快照模型 | `IN_PROGRESS` | 高 | `M2` | [docs/ai/tasks/CFG-001.md](/Users/zero/Downloads/code/LiteShunt/docs/ai/tasks/CFG-001.md) |
 | `POC-003` | 验证 SOCKS5 转发链路 | `TODO` | 中 | `POC-002`、`CFG-001` | [docs/ai/tasks/POC-003.md](/Users/zero/Downloads/code/LiteShunt/docs/ai/tasks/POC-003.md) |
 
@@ -27,6 +27,7 @@
 - `POC-002` 依赖 `POC-001` 已完成的工程骨架与扩展入口。
 - `CFG-001` 为 `POC-002` 和 `POC-003` 提供配置快照与共享读写基础。
 - `POC-003` 依赖 `POC-002` 先确认真实 Flow 已进入扩展，避免先做无落点的转发链路。
+- `POC-002` 当前因签名与 `Network Extensions` capability 外部条件未满足而阻塞，恢复前不要误判为代码问题。
 - `POC-004`、`POC-005` 暂不单独建档，待 `POC-003` 接近完成后再细化为独立任务文件。
 
 ## 5. 当前维护约定

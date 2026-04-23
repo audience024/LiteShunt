@@ -14,6 +14,7 @@ struct StatusView: View {
             VStack(alignment: .leading, spacing: 8) {
                 LabeledContent("配置状态", value: managerStore.statusMessage)
                 LabeledContent("已加载配置数", value: "\(managerStore.managerCount)")
+                LabeledContent("最近配置摘要", value: managerStore.lastSavedConfigurationSummary)
                 LabeledContent("App Group", value: managerStore.appGroupIdentifier)
                 LabeledContent(
                     "扩展标识",
@@ -28,12 +29,23 @@ struct StatusView: View {
                     .textSelection(.enabled)
             }
 
-            Button("重新加载透明代理配置") {
-                Task {
-                    await managerStore.reloadManagers()
+            HStack(spacing: 12) {
+                Button("写入 POC 配置") {
+                    Task {
+                        await managerStore.savePOCConfiguration()
+                    }
                 }
+                .buttonStyle(.borderedProminent)
+                .disabled(managerStore.isPerformingOperation)
+
+                Button("重新加载透明代理配置") {
+                    Task {
+                        await managerStore.reloadManagers()
+                    }
+                }
+                .buttonStyle(.bordered)
+                .disabled(managerStore.isPerformingOperation)
             }
-            .buttonStyle(.borderedProminent)
 
             Spacer()
         }
